@@ -1,16 +1,19 @@
 import ReactPaginate from 'react-paginate';
 import css from './Pagination.module.css';
 const ReactPaginateFix = (ReactPaginate as any).default || ReactPaginate;
+
 interface PaginationProps {
   pageCount: number;
+  currentPage: number;
   onPageChange: (selectedItem: { selected: number }) => void;
 }
 
-export const Pagination = ({ pageCount, onPageChange }: PaginationProps) => {
+export const Pagination = ({ pageCount, currentPage, onPageChange }: PaginationProps) => {
   //console.log('ReactPaginate type:', typeof ReactPaginate);
   
   return (
     <ReactPaginateFix
+      forcePage={currentPage -1}
       breakLabel="..."
       nextLabel="->"
       onPageChange={onPageChange}
