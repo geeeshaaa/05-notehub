@@ -7,7 +7,7 @@ interface PaginationProps {
 }
 
 export const Pagination = ({ pageCount, onPageChange }: PaginationProps) => {
-  console.log('ReactPaginate type:', typeof ReactPaginate);
+  //console.log('ReactPaginate type:', typeof ReactPaginate);
   
   return (
     <ReactPaginateFix
